@@ -1,0 +1,22 @@
+server:
+  port: 8888
+  tomcat:
+    connection-timeout: 2s
+    keep-alive-timeout: 15s
+    thread:
+      max: 50
+      min-spare: 5
+
+
+spring:
+  application:
+    name: config-serivce
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Anandkrish4204/polar-config
+          default-label: master
+          clone-on-start: true
+          force-pull: true
+          timeout: 5
